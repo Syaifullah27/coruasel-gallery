@@ -1,0 +1,339 @@
+*, html, body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  font-family: 'Bebas Neue', sans-serif;
+	background-color: #white;
+}
+
+h1{
+  text-align: center;
+  font-size : 80px;
+  text-shadow: 3px 3px 5px gray;
+  color: rgb(0,0,0,7) ;
+  padding-top :10px ;
+}
+  
+.container{
+  background-color:#eaeaea;
+	margin:40px auto;
+	width: 790px;
+	padding: 25px;
+  box-shadow: 3px 3px 6px gray;
+  border-radius: 7px;
+  
+  
+}
+
+.Foto{
+	width: 120px;
+	height: 120px;
+	border-radius: 7px ;
+}
+
+ul{
+  list-style: none;
+}
+
+.galery .hutao{
+  font-size: 25px ;
+  text-align: center ;
+  line-height: 270px;
+  width: 120px;
+  height: 120px ;
+  background-color: rgba(220,10,50,0.3 );
+  display: block ;
+  position: absolute ;
+  top: 0;
+  border-radius: 7px ;
+  color:rgba(220,10,50,0.6 ) ;
+  opacity: 0;
+  transition: all .5s ease-in-out ;
+   cursor: pointer;
+  
+}
+.galery .hutao:hover{
+  opacity: 1 ;
+}
+
+.galery li{
+  width: 120px;
+  height: 120px ;
+  border-radius: 7px;
+  float: left ;
+  margin-right: 28px;
+  position: relative ;
+}
+
+.galery .nahida{
+  font-size: 25px ;
+  text-align: center ;
+  line-height: 270px;
+  width: 120px;
+  height: 120px ;
+  background-color: rgba(191,210,117,.3);
+  display: block ;
+  position: absolute ;
+  border-radius: 7px ;
+  top: 0;
+  color:rgba(191,210,117,.9) ;
+  opacity: 0;
+  transition: all .85s ease-in-out ;
+  cursor: pointer;
+}
+.galery .nahida:hover{
+  opacity: 1;
+}
+
+
+.galery .yae-miko{
+  font-size: 25px ;
+  text-align: center ;
+  line-height: 270px;
+  width: 120px;
+  height: 120px ;
+  background-color: rgba(212,115,116,.4);
+  display: block ;
+  position: absolute ;
+  top: 0;
+  border-radius: 7px ;
+  color: rgba(212,115,116,.9);
+  opacity: 0;
+  transition: all .5s ease-in-out ;
+   cursor: pointer;
+}
+.galery .yae-miko:hover{
+  opacity: 1 ;
+}
+
+.ei{
+  font-size: 25px ;
+  text-align: center ;
+  line-height: 270px;
+  width: 120px;
+  height: 120px ;
+  background-color: rgba(77,43,138,.3);
+  display: block ;
+  position: absolute ;
+  top: 0;
+  border-radius: 7px ;
+  color:rgba(77,43,138,.9) ;
+  opacity: 0;
+  transition: all .5s ease-in-out ;
+  opacity: 0;
+   cursor: pointer;
+}
+.galery .ei:hover{
+  opacity: 1;
+}
+
+.yelan{
+  font-size: 25px ;
+  text-align: center ;
+  line-height: 270px;
+  width: 120px;
+  height: 120px ;
+  background-color:rgba(47,85,162,.4);
+  display: block ;
+  position: absolute ;
+  top: 0;
+  border-radius: 7px ;
+  color:rgba(18,44,96,.9) ;
+  opacity: 0;
+  transition: all .5s ease-in-out ;
+   cursor: pointer;
+}
+.galery .yelan:hover{
+  opacity: 1 ;
+}
+
+.clear{
+  clear: both ;
+}
+
+
+/*overlay*/
+.overlay{
+  background-color:rgba(0,0,0,0);
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed ;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition:all .5s  ;
+  background-size: cover;
+  text-align: center ;
+  padding: 100px 0px;
+}
+
+.overlay:target{
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.8);
+  width: auto;
+  height: auto;
+}
+
+.overlay img{
+  max-height: 100%;
+}
+
+
+.overlay:target img{
+  animation: zoomdanfade .3s;
+}
+
+.overlay .close{
+  position: absolute ;
+  top: 75px ;
+  right: 95px;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  padding: 13px;
+  font-size: 30px;
+  width: 50px;
+  line-height: 17px;
+  border-radius: 55%;
+  opacity: 0 ;
+}
+
+.overlay:target .close{
+  animation:Slidedownfade .4s .2s forwards ;
+}
+
+/*navigasi*/
+.Next, .Prev{
+  width: 98px;
+  height:96px ;
+  background-image:url('next@2x.png') ;
+  position: absolute ;
+  text-indent: -9999px;
+  top: 30%;
+  opacity: 0 ;
+}
+.Prev{
+  background-image: url('prev@2x.png');
+  margin-left: -95px;
+}
+
+
+.overlay:target .Next,
+.overlay:target .Prev{
+  animation: fadeajah .4s .2s forwards ;
+}
+
+
+
+
+/*animasi*/
+@keyframes fadeajah{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1 ;
+  }
+}
+
+
+
+
+
+@keyframes zoomdanfade{
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1 ;
+  }
+}
+
+
+@keyframes Slidedownfade{
+  0%{
+    margin-right: -10px;
+    opacity:0 ;
+  }
+  100%{
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+#h4-1{
+  text-align: center;
+  padding-bottom: 250px;
+}
+
+#h4-2{
+  text-align: center;
+}
+
+
+/*flexbox*/
+
+.cuntainer{
+  background-color:#eaeaea;
+	margin:40px auto;
+	width:790px;
+	padding: 25px;
+  box-shadow: 3px 3px 6px gray;
+  border-radius: 7px;
+  display: flex ;
+  justify-content: space-evenly;
+  
+}
+ .satu, .dua, .tiga, .empat, .lima, .enam{
+  margin-right: 17px;
+  Margin-left:17px;
+  border-radius: 7px;
+  font-size: 25px ;
+  line-height: 120px;
+  text-align: center ;
+  
+}
+
+.satu{
+  background-color: royalblue ;
+  width: 120px;
+  height: 120px;
+  
+}
+.dua{
+  background-color: crimson ;
+  width: 120px;
+  height:120px;
+ 
+}
+.tiga{
+  background-color: orange;
+  width: 120px ;
+  height: 120px;
+  
+}
+.empat{
+  background-color: tomato;
+  width: 120px;
+  height: 120px;
+  
+}
+.lima{
+  background-color: salmon;
+  width: 120px;
+  height: 120px;
+}
+.enam{
+  background-color: pink;
+  height: 120px ;
+  width: 120px;
+  margin-top: 18px;
+}
+
+
+
